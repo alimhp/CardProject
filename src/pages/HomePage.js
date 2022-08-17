@@ -1,12 +1,30 @@
 import Layout from "../layout/layout";
-
+import * as data from "../conmponents/data";
 
 const HomePage = () => {
   return (
     <Layout>
-      <h2>this is home page</h2>
+      <main className="container">
+        <section className="productList">
+          {data.products.map((product) => {
+            return (
+              <section className="product">
+                <div className="productImg">
+                  <img src={product.image} alt={product.name}></img>
+                </div>
+                <div className="productDesc">
+                  <p>{product.name}</p>
+                  <p>$ {product.price}</p>
+                </div>
+              </section>
+            );
+          })}
+        </section>
+      </main>
     </Layout>
   );
 };
 
 export default HomePage;
+{
+}
