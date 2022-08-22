@@ -11,7 +11,7 @@ export const products = [
     offPrice: 120,
     discount: 0,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
+      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const products = [
     offPrice: 100,
     discount: 8,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
+      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const products = [
     offPrice: 89,
     discount: 10,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
+      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const products = [
     offPrice: 220,
     discount: 15,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
+      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
   },
   {
     id: 5,
@@ -63,7 +63,7 @@ export const products = [
     offPrice: 150,
     discount: 0,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
+      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
   },
   {
     id: 6,
@@ -77,6 +77,6 @@ export const products = [
     offPrice: 200,
     discount: 13,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
+      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
   },
 ];
