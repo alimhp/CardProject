@@ -18,26 +18,28 @@ const CartPage = () => {
   return (
     <Layout>
       <main className="container">
-        <section className="cartItemList">
-          {cart.map((item) => {
-            return (
-              <div className="cartItem">
-                <div className="itemImage">
-                  <img src={item.image} alt={item.name}></img>
+        <section className="cartCenter">
+          <section className="cartItemList">
+            {cart.map((item) => {
+              return (
+                <div className="cartItem">
+                  <div className="itemImage">
+                    <img src={item.image} alt={item.name}></img>
+                  </div>
+                  <div>{item.name}</div>
+                  <div>{item.price}$</div>
+                  <div>{item.price * item.quantity}$</div>
+                  <div>
+                    <button>Add</button>
+                    <button>{item.quantity}</button>
+                    <button>remove</button>
+                  </div>
                 </div>
-                <div>{item.name}</div>
-                <div>{item.price}$</div>
-                <div>{item.price * item.quantity}$</div>
-                <div>
-                  <button>Add</button>
-                  <button>{item.quantity}</button>
-                  <button>remove</button>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </section>
+          <section className="cartSummery">cart summery</section>
         </section>
-        <section className="cartSummery">cart summery</section>
       </main>
     </Layout>
   );
