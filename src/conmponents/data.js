@@ -10,7 +10,8 @@ export const products = [
     price: 120,
     offPrice: 120,
     discount: 0,
-    image: "https://s4.uupload.ir/files/item1_soj.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ export const products = [
     price: 110,
     offPrice: 100,
     discount: 8,
-    image: "https://s4.uupload.ir/files/item2_fc5s.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
   },
   {
     id: 3,
@@ -32,7 +34,8 @@ export const products = [
     price: 99,
     offPrice: 89,
     discount: 10,
-    image: "https://s4.uupload.ir/files/item3_zvc9.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
   },
   {
     id: 4,
@@ -45,7 +48,8 @@ export const products = [
     price: 260,
     offPrice: 220,
     discount: 15,
-    image: "https://s4.uupload.ir/files/item4_zr94.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
   },
   {
     id: 5,
@@ -58,7 +62,8 @@ export const products = [
     price: 150,
     offPrice: 150,
     discount: 0,
-    image: "https://s4.uupload.ir/files/item5_24ye.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
   },
   {
     id: 6,
@@ -71,6 +76,7 @@ export const products = [
     price: 220,
     offPrice: 200,
     discount: 13,
-    image: "https://s4.uupload.ir/files/item6_7jfy.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWXZy8FM3fw_Z8B2HoBPPVOdZvXJjqYQAOX2JUQZcpQ&s",
   },
 ];
