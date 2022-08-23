@@ -1,8 +1,11 @@
 import Layout from "../layout/layout";
 import * as data from "../conmponents/data";
-import { useCartActions } from "../Contex/CartProvider";
+import { useCart, useCartActions } from "../Contex/CartProvider";
 import { toast } from "react-toastify";
+import { checkInCart } from "../utils/checkInCart";
+
 const HomePage = () => {
+  const { cart } = useCart();
   const dispatch = useCartActions();
   const addProductHandler = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
@@ -26,7 +29,7 @@ const HomePage = () => {
                     onClick={() => addProductHandler(product)}
                     className="btn primary"
                   >
-                    add to carts
+                    {checkInCart(cart, product) ? "in Cart" : "add to Cart"}
                   </button>
                 </div>
               </section>
