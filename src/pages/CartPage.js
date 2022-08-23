@@ -5,7 +5,7 @@ import "./CartPage.css";
 const CartPage = () => {
   //we use{cart}insted of cartstate.cart
   //we distractur cart from it to have clean code
-  const { cart } = useCart();
+  const { cart, total } = useCart();
   const dispatch = useCartActions();
   if (!cart.length)
     return (
@@ -45,7 +45,10 @@ const CartPage = () => {
               );
             })}
           </section>
-          <section className="cartSummery">cart summery</section>
+          <section className="cartSummery">
+            <h2>Cart Summery</h2>
+            <div>{total} $</div>
+          </section>
         </section>
       </main>
     </Layout>
