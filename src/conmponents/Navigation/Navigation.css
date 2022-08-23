@@ -34,3 +34,22 @@
   background-color: #fff;
   border-radius: 10px;
 }
+.cartlength {
+  /* background-color: red; */
+  right: -9px;
+  top: -9px;
+  /* read positions */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #6d28d9;
+  color: #fff;
+  font-size: 14px;
+}
+.cartLink {
+  position: relative;
+}

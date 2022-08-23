@@ -3,7 +3,7 @@ import Layout from "../layout/layout";
 import "./CartPage.css";
 
 const CartPage = () => {
-  //we use{cart}insted of cartstate.cart
+  //we use{cart}insted of cartstate(initialstate).cart
   //we distractur cart from it to have clean code
   const { cart, total } = useCart();
   const dispatch = useCartActions();
