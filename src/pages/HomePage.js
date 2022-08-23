@@ -5,8 +5,11 @@ import { toast } from "react-toastify";
 import { checkInCart } from "../utils/checkInCart";
 
 const HomePage = () => {
+
   const { cart } = useCart();
   const dispatch = useCartActions();
+
+  
   const addProductHandler = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
     toast.success(`${product.name} added to cart !`);

@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../Contex/CartProvider";
+import { BsFillBasketFill } from "react-icons/bs";
+import { AiTwotoneHome } from "react-icons/ai";
 import "./Navigation.css";
 const Navigation = () => {
   const { cart } = useCart();
@@ -9,12 +11,12 @@ const Navigation = () => {
         <ul>
           <li>
             <NavLink to="/" activeClassName="activeLink" exact>
-              Home
+              Home <AiTwotoneHome />
             </NavLink>
           </li>
           <li className="cartLink">
             <NavLink to="/cart" activeClassName="activeLink">
-              Cart
+              Carts <BsFillBasketFill className="logocart" />
               <span className="cartlength"> {cart.length}</span>
             </NavLink>
           </li>
