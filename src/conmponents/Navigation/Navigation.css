@@ -30,5 +30,7 @@
 .mainNavigatin a:hover,
 .activeLink {
   color: #6d28d9;
-  /* background-color: #fff; */
+  /* border-bottom: 1px solid #6d28d9; */
+  background-color: #fff;
+  border-radius: 10px;
 }

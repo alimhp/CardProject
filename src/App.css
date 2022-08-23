@@ -50,6 +50,9 @@ body {
   color: #8b5cf6;
   border-radius: 5px;
 }
+.btn:hover {
+  background: #3e296d;
+}
 .primary {
   background-color: #8b5cf6;
   color: #fff;

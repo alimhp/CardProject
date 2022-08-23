@@ -1,4 +1,4 @@
-import { useCart } from "../Contex/CartProvider";
+import { useCart, useCartActions } from "../Contex/CartProvider";
 import Layout from "../layout/layout";
 import "./CartPage.css";
 
@@ -6,6 +6,7 @@ const CartPage = () => {
   //we use{cart}insted of cartstate.cart
   //we distractur cart from it to have clean code
   const { cart } = useCart();
+  const dispatch = useCartActions();
   if (!cart.length)
     return (
       <Layout>
@@ -15,6 +16,12 @@ const CartPage = () => {
       </Layout>
     );
   // console.log(cart);
+  const incHandler = (cartItem) => {
+    dispatch({ type: "ADD_TO_CART", payload: cartItem });
+  };
+  const decHandler = (cartItem) => {
+    dispatch({ type: "REMOVE_PRODUCT", payload: cartItem });
+  };
   return (
     <Layout>
       <main className="container">
@@ -30,9 +37,9 @@ const CartPage = () => {
                   <div>{item.price}$</div>
                   <div>{item.price * item.quantity}$</div>
                   <div>
-                    <button>Add</button>
+                    <button onClick={() => incHandler(item)}>Add</button>
                     <button>{item.quantity}</button>
-                    <button>remove</button>
+                    <button onClick={() => decHandler(item)}>remove</button>
                   </div>
                 </div>
               );

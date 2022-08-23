@@ -7,6 +7,7 @@ const HomePage = () => {
   const addProductHandler = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
+  
   return (
     <Layout>
       <main className="container">
