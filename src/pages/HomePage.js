@@ -1,13 +1,14 @@
 import Layout from "../layout/layout";
 import * as data from "../conmponents/data";
 import { useCartActions } from "../Contex/CartProvider";
-
+import { toast } from "react-toastify";
 const HomePage = () => {
   const dispatch = useCartActions();
   const addProductHandler = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
+    toast.success(`${product.name} added to cart !`);
   };
-  
+
   return (
     <Layout>
       <main className="container">
