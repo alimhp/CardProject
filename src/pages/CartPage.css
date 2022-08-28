@@ -45,3 +45,10 @@ button {
   margin-left: 10px;
   padding: 3px 6px;
 }
+.summeryItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}

@@ -3,8 +3,6 @@ import Layout from "../layout/layout";
 import "./CartPage.css";
 
 const CartPage = () => {
-  //we use{cart}insted of cartstate(initialstate).cart
-  //we distractur cart from it to have clean code
   const { cart, total } = useCart();
   const dispatch = useCartActions();
   if (!cart.length)
@@ -15,12 +13,11 @@ const CartPage = () => {
         </main>
       </Layout>
     );
-  // console.log(cart);
-  const incHandler = (cartItem) => {
-    dispatch({ type: "ADD_TO_CART", payload: cartItem });
+  const incHandler = (cartIem) => {
+    dispatch({ type: "ADD_TO_CART", payload: cartIem });
   };
-  const decHandler = (cartItem) => {
-    dispatch({ type: "REMOVE_PRODUCT", payload: cartItem });
+  const decHandler = (cartIem) => {
+    dispatch({ type: "REMOVE_PRODUCT", payload: cartIem });
   };
   return (
     <Layout>
@@ -34,8 +31,7 @@ const CartPage = () => {
                     <img src={item.image} alt={item.name}></img>
                   </div>
                   <div>{item.name}</div>
-                  <div>{item.price}$</div>
-                  <div>{item.price * item.quantity}$</div>
+                  <div>{item.offPrice * item.quantity}$</div>
                   <div>
                     <button onClick={() => incHandler(item)}>Add</button>
                     <button>{item.quantity}</button>
@@ -45,26 +41,36 @@ const CartPage = () => {
               );
             })}
           </section>
-          <section className="cartSummery">
-            <h2>Cart Summery</h2>
-            <div>{total} $</div>
-          </section>
+
+          <CartSummery cart={cart} total={total} />
         </section>
       </main>
     </Layout>
   );
 };
 
-// <main>
-// {cart.length ? (
-//     cart.map((item) => (
-// <div key={item.id}>
-//     <p>{item.name}</p>
-// </div>
-// ))
-// ) : (
-// <p>no item in cart !</p>
-// )}
-// </main>
-
 export default CartPage;
+
+const CartSummery = ({ total, cart }) => {
+  const originalTotalPrice = cart.length
+    ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0)
+    : 0;
+
+  return (
+    <section className="cartSummery">
+      <h2>Cart Summery</h2>
+      <div className="summeryItem">
+        <p>original total price</p>
+        <p>{originalTotalPrice} $</p>
+      </div>
+      <div className="summeryItem">
+        <p>cart discount</p>
+        <p>{originalTotalPrice - total} $</p>
+      </div>
+      <div className="summeryItem net">
+        <p>net price</p>
+        <p>{total} $</p>
+      </div>
+    </section>
+  );
+};
