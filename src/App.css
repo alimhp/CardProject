@@ -58,3 +58,7 @@ body {
   background-color: #8b5cf6;
   color: #fff;
 }
+a {
+  padding-top: 10px;
+  text-decoration: none;
+}
