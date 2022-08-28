@@ -68,6 +68,7 @@ const CartSummery = ({ total, cart }) => {
         <p>cart discount</p>
         <p>{originalTotalPrice - total} $</p>
       </div>
+      <hr />
       <div className="summeryItem net">
         <p>net price</p>
         <p>{total} $</p>
