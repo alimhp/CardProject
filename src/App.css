@@ -30,7 +30,9 @@ body {
 }
 .productImg img {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 .container {
   display: flex;

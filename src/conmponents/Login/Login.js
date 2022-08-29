@@ -3,19 +3,21 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import "./Login.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useState } from "react";
+import { loginUser } from "../../Services/LoginService";
 
 const initialValues = {
   email: "",
   password: "",
 };
 
-const onSubmit = (values) => {
-  console.log(values);
-  // axios
-  //   .post("http://localhost:3001/users", values)
-  //   .then((res) => console.log(res.data))
-  //   .catch((err) => console.log(err))
-};
+// const onSubmit = (values) => {
+//   console.log(values);
+//   // axios
+//   //   .post("http://localhost:3001/users", values)
+//   //   .then((res) => console.log(res.data))
+//   //   .catch((err) => console.log(err))
+// };
 
 const validationSchema = yup.object({
   email: yup
@@ -27,6 +29,19 @@ const validationSchema = yup.object({
 });
 
 const LoginForm = () => {
+  const [error, setError] = useState(null);
+  const onSubmit = async (values) => {
+    console.log(values);
+    try {
+      const { data } = await loginUser(values);
+      // console.log(data);
+      setError(null);
+    } catch (error) {
+      if (error.response && error.response.data.message)
+        setError(error.response.data.message);
+    }
+  };
+
   const formik = useFormik({
     initialValues,
     onSubmit,
@@ -48,7 +63,12 @@ const LoginForm = () => {
           <button type="submit" disabled={!formik.isValid} className="loginBtn">
             login
           </button>
-          <Link to="/signup">
+          {error && (
+            <p style={{ color: "red", fontSize: "13px", padding: "10px" }}>
+              {error}
+            </p>
+          )}
+          <Link to="/Signin">
             <p className="signupStatus">Not signup yet ?</p>
           </Link>
         </form>

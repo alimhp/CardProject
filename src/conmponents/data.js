@@ -1,3 +1,4 @@
+
 export const products = [
   {
     id: 1,
@@ -10,8 +11,7 @@ export const products = [
     price: 120,
     offPrice: 120,
     discount: 0,
-    image:
-      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+    image: "https://s6.uupload.ir/files/daniel-storek-jm-qked1gmi-unsplash_ja2.jpg",
   },
   {
     id: 2,
@@ -20,8 +20,7 @@ export const products = [
     price: 110,
     offPrice: 100,
     discount: 8,
-    image:
-      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+    image: "https://s6.uupload.ir/files/andres-jasso-pqbl_mxmaue-unsplash_gkir.jpg",
   },
   {
     id: 3,
@@ -34,8 +33,7 @@ export const products = [
     price: 99,
     offPrice: 89,
     discount: 10,
-    image:
-      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+    image: "https://s6.uupload.ir/files/maksim-larin-nopsc3nwtzy-unsplash_i0j6.jpg",
   },
   {
     id: 4,
@@ -48,8 +46,7 @@ export const products = [
     price: 260,
     offPrice: 220,
     discount: 15,
-    image:
-      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+    image: "https://s6.uupload.ir/files/revolt-164_6wvehfi-unsplash_xaog.jpg",
   },
   {
     id: 5,
@@ -62,8 +59,7 @@ export const products = [
     price: 150,
     offPrice: 150,
     discount: 0,
-    image:
-      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+    image: "https://s6.uupload.ir/files/maksim-larin-ezdrvza1hzw-unsplash_nm8f.jpg",
   },
   {
     id: 6,
@@ -76,7 +72,93 @@ export const products = [
     price: 220,
     offPrice: 200,
     discount: 13,
-    image:
-      "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+    image: "https://s6.uupload.ir/files/luis-felipe-lins-j2-waqdckus-unsplash_ku8a.jpg",
   },
 ];
+
+
+
+
+
+// export const products = [
+//   {
+//     id: 1,
+//     name: "Winter body",
+//     description: [
+//       { support: "گارانتی مادام العمر" },
+//       { support: "ارسال رایگان" },
+//       { support: "اورجینال" },
+//     ],
+//     price: 120,
+//     offPrice: 120,
+//     discount: 0,
+//     image:
+//       "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+//   },
+//   {
+//     id: 2,
+//     name: "Adidas",
+//     description: [{ support: "گارانتی مادام العمر" }, { support: "اورجینال" }],
+//     price: 110,
+//     offPrice: 100,
+//     discount: 8,
+//     image:
+//       "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+//   },
+//   {
+//     id: 3,
+//     name: "Vans",
+//     description: [
+//       { support: "گارانتی مادام العمر" },
+//       { support: "اورجینال" },
+//       { support: "ارسال رایگان" },
+//     ],
+//     price: 99,
+//     offPrice: 89,
+//     discount: 10,
+//     image:
+//       "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+//   },
+//   {
+//     id: 4,
+//     name: "White",
+//     description: [
+//       { support: "گارانتی مادام العمر" },
+//       { support: "اورجینال" },
+//       { support: "ارسال رایگان" },
+//     ],
+//     price: 260,
+//     offPrice: 220,
+//     discount: 15,
+//     image:
+//       "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+//   },
+//   {
+//     id: 5,
+//     name: "Croopped-shoe",
+//     description: [
+//       { support: "گارانتی مادام العمر" },
+//       { support: "اورجینال" },
+//       { support: "ارسال رایگان" },
+//     ],
+//     price: 150,
+//     offPrice: 150,
+//     discount: 0,
+//     image:
+//       "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+//   },
+//   {
+//     id: 6,
+//     name: "Blues",
+//     description: [
+//       { support: "گارانتی مادام العمر" },
+//       { support: "اورجینال" },
+//       { support: "ارسال رایگان" },
+//     ],
+//     price: 220,
+//     offPrice: 200,
+//     discount: 13,
+//     image:
+//       "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?hei=1024&wid=1024&qlt=95",
+//   },
+// ];
