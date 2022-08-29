@@ -5,6 +5,7 @@ import "./SignUp.css";
 import { Link } from "react-router-dom";
 import { signupUser } from "../../Services/SignupServices";
 import { useState } from "react";
+import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 const initialValues = {
   name: "",
@@ -50,7 +51,7 @@ const validationSchema = yup.object({
     .oneOf([yup.ref("password"), null], "Passwords must match"),
 });
 
-const SignupForm = () => {
+const SignupForm = ({ history }) => {
   const [error, setError] = useState(null);
   const onSubmit = async (values) => {
     const { name, email, phoneNumber, password } = values;
@@ -63,6 +64,8 @@ const SignupForm = () => {
     };
     try {
       const { data } = await signupUser(userData);
+      setError(null);
+      history.push("/");
       console.log(data);
     } catch (error) {
       if (error.response && error.response.data.message) {
@@ -119,4 +122,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default withRouter(SignupForm); 
