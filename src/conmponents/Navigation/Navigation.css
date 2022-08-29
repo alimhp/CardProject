@@ -2,13 +2,20 @@
   width: 100%;
   height: 60px;
   background-color: #ede9fe;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
   /* margin-bottom: 20px; */
 }
 .mainNavigatin nav {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: space-between;
   align-items: center;
   height: 100%;
+  width: 100%;
+  max-width: 1170px;
 }
 .mainNavigatin ul {
   display: flex;
@@ -55,4 +62,7 @@
 }
 .logocart {
   font-size: 20px;
+}
+.loginLink{
+  display: flex;
 }
