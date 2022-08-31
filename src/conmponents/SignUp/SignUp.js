@@ -4,9 +4,10 @@ import * as yup from "yup";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
 import { signupUser } from "../../Services/SignupServices";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
-import { useAuthActions } from "../../providers/AuthProvider";
+import { useAuth, useAuthActions } from "../../providers/AuthProvider";
+import { useQuery } from "../../HOOKS/UseQuery";
 
 const initialValues = {
   name: "",
@@ -15,15 +16,6 @@ const initialValues = {
   password: "",
   passwordConfirm: "",
 };
-
-// const onSubmit = (values) => {
-//   console.log(values);
-//   // axios
-//   //   .post("http://localhost:3001/users", values)
-//   //   .then((res) => console.log(res.data))
-//   //   .catch((err) => console.log(err))
-// };
-
 const validationSchema = yup.object({
   name: yup
     .string()
@@ -54,7 +46,14 @@ const validationSchema = yup.object({
 
 const SignupForm = ({ history }) => {
   const setAuth = useAuthActions();
+  const auth = useAuth();
+  const query = useQuery();
+  const redirect = query.get("redirect") || "/";
   const [error, setError] = useState(null);
+  useEffect(() => {
+    if (auth) history.push(redirect);
+  }, [redirect.userData]);
+
   const onSubmit = async (values) => {
     const { name, email, phoneNumber, password } = values;
     // console.log(values);
@@ -67,7 +66,7 @@ const SignupForm = ({ history }) => {
     try {
       const { data } = await signupUser(userData);
       setAuth(data);
-      localStorage.setItem("authState", JSON.stringify(data));
+      // localStorage.setItem("authState", JSON.stringify(data));
       setError(null);
       history.push("/");
       console.log(data);
@@ -117,7 +116,7 @@ const SignupForm = ({ history }) => {
             submit
           </button>
           {error && <p style={{ color: "red", fontSize: "13px" }}>{error}</p>}
-          <Link to="/Login">
+          <Link to={`/login?redirect=${redirect}`}>
             <p className="signupStatus">already Login?</p>
           </Link>
         </form>

@@ -3,22 +3,15 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import "./Login.css";
 import { Link, withRouter } from "react-router-dom/cjs/react-router-dom.min";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { loginUser } from "../../Services/LoginService";
-import { useAuthActions } from "../../providers/AuthProvider";
+import { useAuth, useAuthActions } from "../../providers/AuthProvider";
+import { useQuery } from "../../HOOKS/UseQuery";
 
 const initialValues = {
   email: "",
   password: "",
 };
-
-// const onSubmit = (values) => {
-//   console.log(values);
-//   // axios
-//   //   .post("http://localhost:3001/users", values)
-//   //   .then((res) => console.log(res.data))
-//   //   .catch((err) => console.log(err))
-// };
 
 const validationSchema = yup.object({
   email: yup
@@ -31,7 +24,15 @@ const validationSchema = yup.object({
 
 const LoginForm = ({ history }) => {
   const setAuth = useAuthActions();
+  const auth = useAuth();
+  const query = useQuery();
+  const redirect = query.get("redirect") || "/";
+
   const [error, setError] = useState(null);
+  useEffect(() => {
+    if (auth) history.push(redirect);
+  }, [redirect.userData]);
+
   const onSubmit = async (values) => {
     console.log(values);
     try {
@@ -72,7 +73,7 @@ const LoginForm = ({ history }) => {
               {error}
             </p>
           )}
-          <Link to="/Signin">
+          <Link to={`/signup?redirect=${redirect}`}>
             <p className="signupStatus">Not signup yet ?</p>
           </Link>
         </form>

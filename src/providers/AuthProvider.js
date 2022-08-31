@@ -1,21 +1,33 @@
-import { useContext, useState, createContext } from "react"; 
+import { useState, useContext, createContext, useEffect } from "react";
 
-export const AuthProviderContext = createContext();
-export const AuthProviderContextDispatcher = createContext();
+const AuthPrividerContext = createContext();
+const AuthProviderContextDispatcher = createContext();
 
-function AuthProvider ({ children }) {
-    const [state, setState] = useState(false);
+const LOCAL_STORAGE_AUTH_KEY = "authState";
 
-    return (
-        <AuthProviderContext.Provider value={state}>
-            <AuthProviderContextDispatcher.Provider value={setState}>
-                {children}
-            </AuthProviderContextDispatcher.Provider>
-        </AuthProviderContext.Provider>
-    )
+function AuthProvider({ children }) {
+  const [state, setState] = useState(false);
+  
+  useEffect(() => {
+    const userData =
+      JSON.parse(localStorage.getItem(LOCAL_STORAGE_AUTH_KEY)) || false;
+    setState(userData);
+  }, []);
+
+  // useEffect(() => {
+  //   const data = JSON.stringify(state);
+  //   localStorage.setItem("authState", data);
+  // }, [state]);
+  return (
+    <AuthPrividerContext.Provider value={state}>
+      <AuthProviderContextDispatcher.Provider value={setState}>
+        {children}
+      </AuthProviderContextDispatcher.Provider>
+    </AuthPrividerContext.Provider>
+  );
 }
 
 export default AuthProvider;
 
-export const useAuth = () => useContext(AuthProviderContext);
-export const useAuthActions = () => useContext(AuthProviderContextDispatcher); 
+export const useAuth = () => useContext(AuthPrividerContext);
+export const useAuthActions = () => useContext(AuthProviderContextDispatcher);

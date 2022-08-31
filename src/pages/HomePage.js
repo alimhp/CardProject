@@ -1,6 +1,6 @@
 import Layout from "../layout/layout";
 import * as data from "../conmponents/data";
-import { useCart, useCartActions } from "../Contex/CartProvider";
+import { useCart, useCartActions } from "../providers/CartProvider";
 import { toast } from "react-toastify";
 import { checkInCart } from "../utils/checkInCart";
 

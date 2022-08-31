@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useCart, useCartActions } from "../Contex/CartProvider";
+import { useCart, useCartActions } from "../providers/CartProvider";
 import Layout from "../layout/layout";
 import "./CartPage.css";
 
@@ -75,7 +75,7 @@ const CartSummery = ({ total, cart }) => {
       </div>
       <div>
         {" "}
-        <Link to="checkout">
+        <Link to="/signup?redirect=checkout">
           <button className="checkoutBtn">Go to checkout </button>
         </Link>
       </div>
